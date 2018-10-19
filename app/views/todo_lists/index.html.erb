@@ -1,0 +1,25 @@
+
+
+
+<div class="container">
+
+<div class="row">
+<div class="col-md-12 col-sm-12" align="center">
+<br>
+<% if user_signed_in? %>
+    <h1>BIENVENIDO COMPA</h1>
+    <%= link_to 'Mostrar mis listas', :action => :indexlists %>
+    
+    
+    <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
+    <%= link_to "Edita tu info ", edit_user_registration_path %>
+<% else %>
+<h1>ACCEDE PARA MAS OPCIONES</h1>
+    <%= link_to "Iniciar sesion", new_user_session_path %>
+    <%= link_to "Crear cuenta", new_user_registration_path %>
+<% end %>
+
+
+</div>
+</div>
+</div>
